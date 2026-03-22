@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>CITY TEMPERED AND COVER HOUSE - 2MM Phone Covers with Auto Timestamp</title>
+  <title>CITY TEMPERED AND COVER HOUSE - Premium Phone Covers</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -19,7 +19,6 @@
       color: #1a2a3a;
     }
 
-    /* Header - Compact */
     .top-heading {
       background: linear-gradient(135deg, #c0392b, #e67e22);
       color: white;
@@ -70,11 +69,42 @@
       align-items: center;
       gap: 6px;
     }
-    .live-time i {
-      font-size: 0.7rem;
+
+    /* Category Tabs */
+    .category-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+      padding: 5px 0;
+      border-bottom: 2px solid #e0e6ed;
+    }
+    .category-tab {
+      padding: 8px 18px;
+      background: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: 0.2s;
+      color: #1e3c4c;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .category-tab i {
+      margin-right: 6px;
+    }
+    .category-tab.active {
+      background: linear-gradient(135deg, #2c5a6e, #1e3e4c);
+      color: white;
+      box-shadow: 0 2px 8px rgba(44,90,110,0.3);
+    }
+    .category-tab:hover:not(.active) {
+      background: #ffd966;
+      color: #1e3c4c;
     }
 
-    /* Top Cart Bar - Moved to Top */
+    /* Top Cart Bar */
     .top-cart-bar {
       background: linear-gradient(135deg, #1e3c4c, #2c5a6e);
       padding: 8px 12px;
@@ -104,9 +134,6 @@
       font-weight: 500;
       color: white;
     }
-    .cart-summary-item i {
-      font-size: 0.7rem;
-    }
     .cart-buttons {
       display: flex;
       gap: 8px;
@@ -123,14 +150,9 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      transition: 0.2s;
     }
     .top-cart-btn.clear {
       background: #e74c3c;
-    }
-    .top-cart-btn:hover {
-      transform: scale(1.02);
-      opacity: 0.95;
     }
     .view-cart-link {
       background: #ffd966;
@@ -143,14 +165,9 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      transition: 0.2s;
-    }
-    .view-cart-link:hover {
-      background: #e67e22;
-      color: white;
     }
 
-    /* Category Banner - 2MM Only */
+    /* Category Banner */
     .category-banner {
       background: linear-gradient(135deg, #2c5a6e, #1e3e4c);
       border-radius: 12px;
@@ -182,7 +199,7 @@
       font-weight: bold;
     }
 
-    /* Search - Compact */
+    /* Search & Filter */
     .search-bar {
       margin: 8px 0;
     }
@@ -208,19 +225,14 @@
       cursor: pointer;
       font-size: 0.6rem;
       font-weight: 500;
-      transition: 0.2s;
     }
     .brand-btn.active {
       background: #2c5a6e;
       color: white;
       border-color: #2c5a6e;
     }
-    .brand-btn:hover {
-      background: #ffd966;
-      border-color: #ffd966;
-    }
 
-    /* Product Grid - Compact List View */
+    /* Product Grid */
     .product-count {
       margin: 8px 0;
       font-size: 0.7rem;
@@ -231,7 +243,7 @@
       flex-direction: column;
       gap: 8px;
       margin: 10px 0;
-      max-height: calc(100vh - 380px);
+      max-height: calc(100vh - 420px);
       overflow-y: auto;
       padding-bottom: 10px;
     }
@@ -255,15 +267,12 @@
       font-size: 0.75rem;
       font-weight: 600;
       color: #1e3c4c;
-      word-break: break-word;
     }
     .product-category {
       font-size: 0.55rem;
       color: #e67e22;
       margin-top: 2px;
     }
-    
-    /* Quantity Selector - Inline with Model */
     .quantity-section {
       display: flex;
       align-items: center;
@@ -291,11 +300,6 @@
       font-size: 0.9rem;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.2s;
-      color: #1e3c4c;
-    }
-    .qty-btn:hover {
-      background: #ffd966;
     }
     .qty-value {
       font-size: 0.8rem;
@@ -311,13 +315,6 @@
       font-size: 0.65rem;
       font-weight: 600;
       cursor: pointer;
-      transition: 0.2s;
-      color: #1e3c4c;
-    }
-    .preset-ten:hover {
-      background: #e67e22;
-      color: white;
-      transform: scale(1.02);
     }
 
     /* Cart Modal */
@@ -340,14 +337,8 @@
       animation: slideDown 0.2s ease;
     }
     @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .cart-modal-header {
       background: #1e3c4c;
@@ -357,16 +348,9 @@
       justify-content: space-between;
       align-items: center;
     }
-    .cart-modal-header h4 {
-      font-size: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
     .close-cart {
       cursor: pointer;
       font-size: 1.1rem;
-      padding: 0 5px;
     }
     .cart-modal-body {
       max-height: 400px;
@@ -397,16 +381,13 @@
     .cart-item-remove-modal {
       color: #e74c3c;
       cursor: pointer;
-      padding: 0 5px;
     }
     .cart-total-modal {
       padding: 8px 0;
       font-weight: bold;
       border-top: 1px solid #ffd966;
-      margin-top: 8px;
       display: flex;
       justify-content: space-between;
-      font-size: 0.8rem;
     }
     .whatsapp-btn-modal {
       width: 100%;
@@ -454,42 +435,12 @@
       margin-top: 10px;
       font-size: 0.6rem;
     }
-    
-    /* Scrollbar */
     .product-grid::-webkit-scrollbar {
       width: 4px;
     }
-    .product-grid::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-    .product-grid::-webkit-scrollbar-thumb {
-      background: #ffd966;
-      border-radius: 10px;
-    }
-    
     @media (max-width: 600px) {
-      .product-card {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .quantity-section {
-        justify-content: space-between;
-      }
-      .live-time {
-        font-size: 0.55rem;
-        padding: 3px 8px;
-      }
-      .top-cart-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .cart-summary {
-        justify-content: space-between;
-      }
-      .cart-buttons {
-        justify-content: space-between;
-      }
+      .product-card { flex-direction: column; align-items: stretch; }
+      .category-tab { padding: 5px 12px; font-size: 0.65rem; }
     }
   </style>
 </head>
@@ -502,7 +453,7 @@
 <div class="header">
   <div class="container">
     <div class="logo">
-      <h1><i class="fas fa-shield-alt"></i> 2MM Phone Cover Store</h1>
+      <h1><i class="fas fa-shield-alt"></i> Premium Phone Cover Store</h1>
       <div class="live-time" id="liveDateTime">
         <i class="fas fa-calendar-alt"></i>
         <span id="currentDateTime">--</span>
@@ -512,50 +463,38 @@
 </div>
 
 <div class="container">
+  <!-- Category Tabs -->
+  <div class="category-tabs" id="categoryTabs">
+    <button class="category-tab active" data-category="tpu"><i class="fas fa-mobile-alt"></i> 2MM TOTO/TPU</button>
+    <button class="category-tab" data-category="silicon"><i class="fas fa-gripfire"></i> SILICON</button>
+    <button class="category-tab" data-category="doyers"><i class="fas fa-gem"></i> DOYERS</button>
+    <button class="category-tab" data-category="smoke"><i class="fas fa-smog"></i> SMOKE</button>
+    <button class="category-tab" data-category="print"><i class="fas fa-print"></i> PRINT</button>
+  </div>
+
   <!-- Top Cart Bar -->
-  <div class="top-cart-bar" id="topCartBar">
+  <div class="top-cart-bar">
     <div class="cart-summary">
-      <div class="cart-summary-item">
-        <i class="fas fa-shopping-bag"></i>
-        <span id="topCartItemCount">0</span> Items
-      </div>
-      <div class="cart-summary-item">
-        <i class="fas fa-boxes"></i>
-        <span id="topCartTotalQty">0</span> Total
-      </div>
+      <div class="cart-summary-item"><i class="fas fa-shopping-bag"></i> <span id="topCartItemCount">0</span> Items</div>
+      <div class="cart-summary-item"><i class="fas fa-boxes"></i> <span id="topCartTotalQty">0</span> Total</div>
     </div>
     <div class="cart-buttons">
-      <button class="view-cart-link" onclick="toggleCartModal()">
-        <i class="fas fa-eye"></i> View Cart
-      </button>
-      <button class="top-cart-btn" onclick="sendWhatsAppOrder()">
-        <i class="fab fa-whatsapp"></i> Order
-      </button>
-      <button class="top-cart-btn clear" onclick="clearCart()">
-        <i class="fas fa-trash"></i> Clear
-      </button>
+      <button class="view-cart-link" onclick="toggleCartModal()"><i class="fas fa-eye"></i> View Cart</button>
+      <button class="top-cart-btn" onclick="sendWhatsAppOrder()"><i class="fab fa-whatsapp"></i> Order</button>
+      <button class="top-cart-btn clear" onclick="clearCart()"><i class="fas fa-trash"></i> Clear</button>
     </div>
   </div>
 
   <!-- Category Banner -->
-  <div class="category-banner">
-    <h2><i class="fas fa-layer-group"></i> 2MM Ultra Slim Collection</h2>
-    <p>Premium quality phone covers • 2mm thickness • Perfect fit • Shockproof protection</p>
-    <div class="badge-info"><i class="fas fa-tag"></i> <span id="modelCount">200+</span> Models Available | Free Shipping</div>
+  <div class="category-banner" id="categoryBanner">
+    <h2 id="bannerTitle"><i class="fas fa-mobile-alt"></i> 2MM TOTO/TPU Collection</h2>
+    <p id="bannerDesc">Ultra slim • 2mm thickness • TPU material • Flexible & durable • Perfect fit</p>
+    <div class="badge-info"><i class="fas fa-tag"></i> <span id="modelCount">0</span> Models Available | Free Shipping</div>
   </div>
 
   <div class="search-bar">
     <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search your phone model...">
-    <div class="brand-filter" id="brandFilter">
-      <button class="brand-btn active" data-brand="all">All Brands</button>
-      <button class="brand-btn" data-brand="1+">OnePlus</button>
-      <button class="brand-btn" data-brand="SAMSUNG">Samsung</button>
-      <button class="brand-btn" data-brand="MI">Xiaomi/Mi</button>
-      <button class="brand-btn" data-brand="OPPO">Oppo</button>
-      <button class="brand-btn" data-brand="VIVO">Vivo</button>
-      <button class="brand-btn" data-brand="REALME">Realme</button>
-      <button class="brand-btn" data-brand="IP">iPhone</button>
-    </div>
+    <div class="brand-filter" id="brandFilter"></div>
   </div>
 
   <div class="product-count" id="productCount"></div>
@@ -564,96 +503,245 @@
 
 <!-- Cart Modal -->
 <div id="cartModal" class="cart-modal">
-  <div class="cart-modal-header">
-    <h4><i class="fas fa-shopping-bag"></i> Your Cart</h4>
-    <span class="close-cart" onclick="toggleCartModal()">&times;</span>
-  </div>
+  <div class="cart-modal-header"><h4><i class="fas fa-shopping-bag"></i> Your Cart</h4><span class="close-cart" onclick="toggleCartModal()">&times;</span></div>
   <div class="cart-modal-body">
     <div id="cartItemsListModal" class="cart-items-list-modal"></div>
-    <div class="cart-total-modal">
-      <span>Total Items:</span>
-      <span id="modalCartTotalQty">0</span>
-    </div>
-    <button class="whatsapp-btn-modal" onclick="sendWhatsAppOrder()">
-      <i class="fab fa-whatsapp"></i> Place Order on WhatsApp
-    </button>
-    <button class="whatsapp-btn-modal clear-cart-modal" onclick="clearCart()">
-      <i class="fas fa-trash"></i> Clear All
-    </button>
+    <div class="cart-total-modal"><span>Total Items:</span><span id="modalCartTotalQty">0</span></div>
+    <button class="whatsapp-btn-modal" onclick="sendWhatsAppOrder()"><i class="fab fa-whatsapp"></i> Place Order on WhatsApp</button>
+    <button class="whatsapp-btn-modal clear-cart-modal" onclick="clearCart()"><i class="fas fa-trash"></i> Clear All</button>
   </div>
 </div>
 
 <footer>
   <p><i class="fab fa-whatsapp"></i> Order on WhatsApp: +919621755459 | CITY TEMPERED AND COVER HOUSE</p>
-  <p style="margin-top: 4px; font-size: 0.6rem;">2MM Ultra Slim Collection | All Phone Models Available</p>
+  <p>Premium Quality Phone Covers | All Models Available</p>
 </footer>
 
 <script>
-  // All 2MM product models - Complete List
-  const productNames = [
-    "2MM 1+ CE 2 LITE", "2MM 1+ CE 3 LITE", "2MM 1+ CE 4 LITE", "2MM 1+ CE 5", "2MM 1+ CE3", "2MM 1+ CE3 LITE", "2MM 1+ CE5",
-    "2MM 1+ NORD 2 T", "2MM 1+ NORD 3", "2MM 1+ NORD 5", "2MM 1+ NORD CE 5", "2MM 1+ NORD CE4", "2MM 1+ NORD CE5", "2MM 1+ NORD2",
-    "2MM 1+10R", "2MM 1+11R", "2MM 1+12 R", "2MM 1+13", "2MM 1+13T", "2MM 1+8T", "2MM 1+NORD", "2MM 1+NORD CE 3 LITE", "2MM 1+NORD CE4 LITE",
-    "2MM INFINIX GO 2023", "2MM INFINIX GO 2024", "2MM INFINIX GO 2025", "2MM INFINIX HOT 50I", "2MM INFINIX SMART 8",
-    "2MM IP 12 PRO MAX", "2MM IP 13 MINI", "2MM IP 13 PRO MAX", "2MM IP 14 PLUS", "2MM IP 14 PRO MAX", "2MM IP 16 PLUS", "2MM IP 16 PRO MAX",
-    "2MM IP 16PRO", "2MM IP 17", "2MM IP 17 AIR", "2MM IP 17 PRO", "2MM IP 6", "2MM IP 6 PLUS", "2MM IP 7", "2MM IP 7G", "2MM IP X",
-    "2MM MI 12C", "2MM MI 13C", "2MM MI 14C", "2MM MI 9A", "2MM MI 9C", "2MM MI A5", "2MM MI MI 12", "2MM MI MI 12 4G", "2MM MI MI 12C",
-    "2MM MI MI 13", "2MM MI MI 13 4G", "2MM MI MI 13 5G", "2MM MI MI 13C", "2MM MI MI 13C 5G", "2MM MI MI 14C", "2MM MI MI 15",
-    "2MM MI MI 6A", "2MM MI MI 7", "2MM MI MI 8", "2MM MI MI 9 POWER", "2MM MI MI 9A", "2MM MI MI A1", "2MM MI MI A1+", "2MM MI MI A3",
-    "2MM MI MI A4", "2MM MI MI A5", "2MM MI MI NOTE 11S", "2MM MI MI NOTE 8", "2MM MI NOTE 10 4G", "2MM MI NOTE 10 5G", "2MM MI NOTE 11",
-    "2MM MI NOTE 11 4G", "2MM MI NOTE 11 5G", "2MM MI NOTE 12 4G", "2MM MI NOTE 13 PRO", "2MM MI NOTE 14", "2MM MI NOTE 14 PRO",
-    "2MM MI NOTE 7", "2MM MI NOTE 8", "2MM MI NOTE 8 PRO", "2MM MI NOTE 9", "2MM MI NOTE 9 4G", "2MM MI NOTE 9 PRO",
-    "2MM MOTO 25 EDGE", "2MM MOTO EDGE 50 FUSION", "2MM MOTO EDGE 60 PRO", "2MM MOTO G05", "2MM MOTO G34", "2MM MOTO G35", "2MM MOTO G54", "2MM MOTO G85",
-    "2MM NOTHING PHONE 1", "2MM NOTHING PHONE 2", "2MM NOTHING PHONE 2A", "2MM NOTHING PHONE 3",
-    "2MM OPPO A15", "2MM OPPO A16", "2MM OPPO A16K", "2MM OPPO A17", "2MM OPPO A18", "2MM OPPO A3 PRO", "2MM OPPO A31", "2MM OPPO A3S", "2MM OPPO A3X",
-    "2MM OPPO A5 PRO", "2MM OPPO A52", "2MM OPPO A53", "2MM OPPO A54", "2MM OPPO A55", "2MM OPPO A57", "2MM OPPO A58", "2MM OPPO A5S", "2MM OPPO A5X",
-    "2MM OPPO A78", "2MM OPPO A79", "2MM OPPO A9", "2MM OPPO A9 2020", "2MM OPPO F11", "2MM OPPO F11 PRO", "2MM OPPO F15", "2MM OPPO F17", "2MM OPPO F17 PRO",
-    "2MM OPPO F19", "2MM OPPO F19 PRO", "2MM OPPO F19 PRO +", "2MM OPPO F21 PRO", "2MM OPPO F23", "2MM OPPO F23 5G", "2MM OPPO F27", "2MM OPPO F27 PRO",
-    "2MM OPPO F29", "2MM OPPO F31 PRO", "2MM OPPO F31 PRO +", "2MM OPPO F9", "2MM OPPO K13", "2MM OPPO RENO 12", "2MM OPPO RENO 12 5G", "2MM OPPO RENO 12F",
-    "2MM OPPO RENO 13", "2MM OPPO RENO 14", "2MM PIXIL 6A", "2MM PIXIL 7A", "2MM PIXIL 8", "2MM PIXIL 8 PRO", "2MM PIXIL 8A", "2MM PIXIL 9A",
-    "2MM REALME 11 5G", "2MM REALME 11 PRO", "2MM REALME 12", "2MM REALME 12 +", "2MM REALME 12 5G", "2MM REALME 12 PRO", "2MM REALME 12+",
-    "2MM REALME 13 5G", "2MM REALME 14", "2MM REALME 14X", "2MM REALME 15", "2MM REALME 15C", "2MM REALME 2", "2MM REALME 3", "2MM REALME 3 PRO",
-    "2MM REALME 5", "2MM REALME 5 PRO", "2MM REALME 7", "2MM REALME 7I", "2MM REALME 8", "2MM REALME 8 5G", "2MM REALME 8I", "2MM REALME 9 PRIME",
-    "2MM REALME 9I", "2MM REALME 9I 5G", "2MM REALME C11", "2MM REALME C12", "2MM REALME C15", "2MM REALME C2", "2MM REALME C20", "2MM REALME C21",
-    "2MM REALME C21Y", "2MM REALME C3", "2MM REALME C30", "2MM REALME C31", "2MM REALME C33", "2MM REALME C35", "2MM REALME C53", "2MM REALME C55",
-    "2MM REALME C61", "2MM REALME C63", "2MM REALME NARZO 20 PRO", "2MM REALME XT",
-    "2MM SAMSUNG A03", "2MM SAMSUNG A03S", "2MM SAMSUNG A04", "2MM SAMSUNG A04E", "2MM SAMSUNG A05", "2MM SAMSUNG A05S", "2MM SAMSUNG A10",
-    "2MM SAMSUNG A11", "2MM SAMSUNG A12", "2MM SAMSUNG A13", "2MM SAMSUNG A14", "2MM SAMSUNG A15", "2MM SAMSUNG A16", "2MM SAMSUNG A20",
-    "2MM SAMSUNG A21S", "2MM SAMSUNG A22", "2MM SAMSUNG A22 4G", "2MM SAMSUNG A23", "2MM SAMSUNG A26", "2MM SAMSUNG A32", "2MM SAMSUNG A33",
-    "2MM SAMSUNG A35", "2MM SAMSUNG A36", "2MM SAMSUNG A50", "2MM SAMSUNG A51", "2MM SAMSUNG A53", "2MM SAMSUNG A54", "2MM SAMSUNG A56",
-    "2MM SAMSUNG F17", "2MM SAMSUNG F23", "2MM SAMSUNG M11", "2MM SAMSUNG M14", "2MM SAMSUNG M30S", "2MM SAMSUNG M31", "2MM SAMSUNG M33",
-    "2MM SAMSUNG M36", "2MM SAMSUNG M54", "2MM SAMSUNG M55", "2MM SAMSUNG M56", "2MM SAMSUNG S20", "2MM SAMSUNG S20 ULTRA", "2MM SAMSUNG S21 FE",
-    "2MM SAMSUNG S21 ULTRA", "2MM SAMSUNG S22 ULTRA", "2MM SAMSUNG S23 FE", "2MM SAMSUNG S23 ULTRA", "2MM SAMSUNG S24 FE", "2MM SAMSUNG S25",
-    "2MM SAMSUNG S25 EDGE", "2MM SAMSUNG S25 ULTRA", "2MM TECHNO GO 2022", "2MM VIVO S1", "2MM VIVO T1 4G", "2MM VIVO T3X", "2MM VIVO T4 5G",
-    "2MM VIVO T4 ULTRA", "2MM VIVO T4X", "2MM VIVO V17", "2MM VIVO V21E", "2MM VIVO V23 5G", "2MM VIVO V23 PRO", "2MM VIVO V25 PRO", "2MM VIVO V27",
-    "2MM VIVO V29", "2MM VIVO V30", "2MM VIVO V30E", "2MM VIVO V40E", "2MM VIVO V50", "2MM VIVO X 200 FE", "2MM VIVO X200 FE", "2MM VIVO Y02",
-    "2MM VIVO Y04", "2MM VIVO Y100", "2MM VIVO Y16", "2MM VIVO Y17", "2MM VIVO Y18", "2MM VIVO Y19S", "2MM VIVO Y200", "2MM VIVO Y200 PRO",
-    "2MM VIVO Y21", "2MM VIVO Y27", "2MM VIVO Y28", "2MM VIVO Y29", "2MM VIVO Y300", "2MM VIVO Y35", "2MM VIVO Y400", "2MM VIVO Y400 PRO",
-    "2MM VIVO Y50", "2MM VIVO Y51", "2MM VIVO Y75", "2MM VIVO Y90", "2MM VIVO Y93", "2MM VIVO Y95", "2MM VIVO YO4"
+  // ==================== 📌 2MM TOTO/TPU MODELS ====================
+  const modelListTpu = [
+    "1+ CE 2 LITE", "1+ CE 3 LITE", "1+ CE 4 LITE", "1+ CE 5", "1+ CE3", "1+ CE3 LITE", "1+ CE5",
+    "1+ NORD 2 T", "1+ NORD 3", "1+ NORD 5", "1+ NORD CE 5", "1+ NORD CE4", "1+ NORD CE5", "1+ NORD2",
+    "1+10R", "1+11R", "1+12 R", "1+13", "1+13T", "1+8T", "1+NORD", "1+NORD CE 3 LITE", "1+NORD CE4 LITE",
+    "INFINIX GO 2023", "INFINIX GO 2024", "INFINIX GO 2025", "INFINIX HOT 50I", "INFINIX SMART 8",
+    "IP 12 PRO MAX", "IP 13 MINI", "IP 13 PRO MAX", "IP 14 PLUS", "IP 14 PRO MAX", "IP 16 PLUS", "IP 16 PRO MAX",
+    "IP 16PRO", "IP 17", "IP 17 AIR", "IP 17 PRO", "IP 6", "IP 6 PLUS", "IP 7", "IP 7G", "IP X",
+    "MI 12C", "MI 13C", "MI 14C", "MI 9A", "MI 9C", "MI A5", "MI MI 12", "MI MI 12 4G", "MI MI 12C",
+    "MI MI 13", "MI MI 13 4G", "MI MI 13 5G", "MI MI 13C", "MI MI 13C 5G", "MI MI 14C", "MI MI 15",
+    "MI MI 6A", "MI MI 7", "MI MI 8", "MI MI 9 POWER", "MI MI 9A", "MI MI A1", "MI MI A1+", "MI MI A3",
+    "MI MI A4", "MI MI A5", "MI MI NOTE 11S", "MI MI NOTE 8", "MI NOTE 10 4G", "MI NOTE 10 5G", "MI NOTE 11",
+    "MI NOTE 11 4G", "MI NOTE 11 5G", "MI NOTE 12 4G", "MI NOTE 13 PRO", "MI NOTE 14", "MI NOTE 14 PRO",
+    "MI NOTE 7", "MI NOTE 8", "MI NOTE 8 PRO", "MI NOTE 9", "MI NOTE 9 4G", "MI NOTE 9 PRO",
+    "MOTO 25 EDGE", "MOTO EDGE 50 FUSION", "MOTO EDGE 60 PRO", "MOTO G05", "MOTO G34", "MOTO G35", "MOTO G54", "MOTO G85",
+    "NOTHING PHONE 1", "NOTHING PHONE 2", "NOTHING PHONE 2A", "NOTHING PHONE 3",
+    "OPPO A15", "OPPO A16", "OPPO A16K", "OPPO A17", "OPPO A18", "OPPO A3 PRO", "OPPO A31", "OPPO A3S", "OPPO A3X",
+    "OPPO A5 PRO", "OPPO A52", "OPPO A53", "OPPO A54", "OPPO A55", "OPPO A57", "OPPO A58", "OPPO A5S", "OPPO A5X",
+    "OPPO A78", "OPPO A79", "OPPO A9", "OPPO A9 2020", "OPPO F11", "OPPO F11 PRO", "OPPO F15", "OPPO F17", "OPPO F17 PRO",
+    "OPPO F19", "OPPO F19 PRO", "OPPO F19 PRO +", "OPPO F21 PRO", "OPPO F23", "OPPO F23 5G", "OPPO F27", "OPPO F27 PRO",
+    "OPPO F29", "OPPO F31 PRO", "OPPO F31 PRO +", "OPPO F9", "OPPO K13", "OPPO RENO 12", "OPPO RENO 12 5G", "OPPO RENO 12F",
+    "OPPO RENO 13", "OPPO RENO 14", "PIXIL 6A", "PIXIL 7A", "PIXIL 8", "PIXIL 8 PRO", "PIXIL 8A", "PIXIL 9A",
+    "REALME 11 5G", "REALME 11 PRO", "REALME 12", "REALME 12 +", "REALME 12 5G", "REALME 12 PRO", "REALME 12+",
+    "REALME 13 5G", "REALME 14", "REALME 14X", "REALME 15", "REALME 15C", "REALME 2", "REALME 3", "REALME 3 PRO",
+    "REALME 5", "REALME 5 PRO", "REALME 7", "REALME 7I", "REALME 8", "REALME 8 5G", "REALME 8I", "REALME 9 PRIME",
+    "REALME 9I", "REALME 9I 5G", "REALME C11", "REALME C12", "REALME C15", "REALME C2", "REALME C20", "REALME C21",
+    "REALME C21Y", "REALME C3", "REALME C30", "REALME C31", "REALME C33", "REALME C35", "REALME C53", "REALME C55",
+    "REALME C61", "REALME C63", "REALME NARZO 20 PRO", "REALME XT",
+    "SAMSUNG A03", "SAMSUNG A03S", "SAMSUNG A04", "SAMSUNG A04E", "SAMSUNG A05", "SAMSUNG A05S", "SAMSUNG A10",
+    "SAMSUNG A11", "SAMSUNG A12", "SAMSUNG A13", "SAMSUNG A14", "SAMSUNG A15", "SAMSUNG A16", "SAMSUNG A20",
+    "SAMSUNG A21S", "SAMSUNG A22", "SAMSUNG A22 4G", "SAMSUNG A23", "SAMSUNG A26", "SAMSUNG A32", "SAMSUNG A33",
+    "SAMSUNG A35", "SAMSUNG A36", "SAMSUNG A50", "SAMSUNG A51", "SAMSUNG A53", "SAMSUNG A54", "SAMSUNG A56",
+    "SAMSUNG F17", "SAMSUNG F23", "SAMSUNG M11", "SAMSUNG M14", "SAMSUNG M30S", "SAMSUNG M31", "SAMSUNG M33",
+    "SAMSUNG M36", "SAMSUNG M54", "SAMSUNG M55", "SAMSUNG M56", "SAMSUNG S20", "SAMSUNG S20 ULTRA", "SAMSUNG S21 FE",
+    "SAMSUNG S21 ULTRA", "SAMSUNG S22 ULTRA", "SAMSUNG S23 FE", "SAMSUNG S23 ULTRA", "SAMSUNG S24 FE", "SAMSUNG S25",
+    "SAMSUNG S25 EDGE", "SAMSUNG S25 ULTRA", "TECHNO GO 2022", "VIVO S1", "VIVO T1 4G", "VIVO T3X", "VIVO T4 5G",
+    "VIVO T4 ULTRA", "VIVO T4X", "VIVO V17", "VIVO V21E", "VIVO V23 5G", "VIVO V23 PRO", "VIVO V25 PRO", "VIVO V27",
+    "VIVO V29", "VIVO V30", "VIVO V30E", "VIVO V40E", "VIVO V50", "VIVO X 200 FE", "VIVO X200 FE", "VIVO Y02",
+    "VIVO Y04", "VIVO Y100", "VIVO Y16", "VIVO Y17", "VIVO Y18", "VIVO Y19S", "VIVO Y200", "VIVO Y200 PRO",
+    "VIVO Y21", "VIVO Y27", "VIVO Y28", "VIVO Y29", "VIVO Y300", "VIVO Y35", "VIVO Y400", "VIVO Y400 PRO",
+    "VIVO Y50", "VIVO Y51", "VIVO Y75", "VIVO Y90", "VIVO Y93", "VIVO Y95", "VIVO YO4"
   ];
+  
+  // ==================== 📌 SILICON MODELS ====================
+  const modelListSilicon = [
+    "1+ 13T", "1+ 8 PRO", "1+ 8T", "1+ 9", "1+ CE 2 LITE", "1+ NORD 2", "1+ NORD 2T", "1+ NORD 4", "1+ NORD 5",
+    "1+ NORD CE", "1+ NORD CE 3 LITE", "1+ NORD CE 4 LITE", "1+ NORD CE 5", "1+ NORD CE2", "1+ NORD CE3",
+    "1+ NORD CE3 LITE", "1+ NORD CE4 LITE", "1+10T", "1+12", "1+12R", "1+13", "1+13T", "1+8", "1+9R", "1+NORD",
+    "1+NORD 4", "1+NORD CE 2 LITE", "1+NORD CE4", "I PHONE 12", "I PHONE 13 PRO", "I PHONE 14", "I PHONE 16", "I PHONE 7",
+    "INFINIFINIX HOT 40", "M11i", "MI 10 PRIME", "MI 10A", "MI 11 LITE", "MI 12 5G", "MI 13 PRO PLUS", "MI 13 5G",
+    "MI 13C", "MI 13C 5G", "MI 5", "MI 5A", "MI 7A", "MI 9 POWER", "MI 9 PRIME", "MI 9C", "MI A3", "MI A5",
+    "MI M6 PRO", "MI NOTE 10 4G", "MI NOTE 10 5G", "MI NOTE 10 PRO", "MI NOTE 11 4G", "MI NOTE 11 PRO",
+    "MI NOTE 12 5G", "MI NOTE 12 PRO", "MI NOTE 12 PRO PLUS", "MI NOTE 13 PRO", "MI NOTE 14 PRO", "MI NOTE 14 PRO PLUS",
+    "MI NOTE 6 PRO", "MI NOTE 8 PRO", "MI NOTE 9", "MI NOTE 9 PRO", "MI POCO C71", "MI POCO M4", "MI POCO M6",
+    "MI POCO X3", "MOTO 50 FUSION", "MOTO 60 FUSION", "MOTO EDGE 50", "MOTO EDGE 60 FUSION", "MOTO EDGE 60 STYLUS",
+    "MOTO G85", "NOTHING 2A", "NOTHING 3A PRO", "NOTHING CMF1", "NOTHING PHONE 2", "OPPO A15", "OPPO A16", "OPPO A18",
+    "OPPO A3", "OPPO A3 PRO", "OPPO A31", "OPPO A5", "OPPO A5 PRO", "OPPO A53", "OPPO A54", "OPPO A55", "OPPO A57",
+    "OPPO A58", "OPPO A59", "OPPO A59 5G", "OPPO A78", "OPPO A78 5G", "OPPO A79", "OPPO F11", "OPPO F17", "OPPO F19",
+    "OPPO F21 PRO 4G", "OPPO F21 PRO 5G", "OPPO F27", "OPPO F27 PRO", "OPPO F29", "OPPO F29 PRO", "OPPO F9 PRO",
+    "OPPO K13X", "OPPO RENO 12", "OPPO RENO 12 PRO", "OPPO RENO 13 5G", "OPPO RENO 2 F", "OPPO RENO 7", "OPPOPO A5X",
+    "OPPOPO F19 PRO", "REALME 12 5G", "REALME 12 PLUS", "REALME 12 PRO", "REALME 13", "REALME 13 5G", "REALME 13 PRO",
+    "REALME 13 PRO PLUS", "REALME 14 5G", "REALME 14 PRO", "REALME 14 PRO PLUS", "REALME 14T", "REALME 15", "REALME 15 PRO",
+    "REALME 5", "REALME 6", "REALME 6 PRO", "REALME 7", "REALME 7 PRO", "REALME 8 4G", "REALME 8 5G", "REALME 87I",
+    "REALME 9I 4G", "REALME C11", "REALME C12", "REALME C15", "REALME C53", "REALME C55", "REALME C63", "REALME C67",
+    "REALME F19 PRO", "REALME NARZO 20A", "REALME NARZO 30", "REALME NARZO 50A", "REALME NARZO 50I", "REALME NARZO 70",
+    "REALME P1 PRO 5G", "REALME P3", "REALME P3 PRO", "REALME P3X", "SAMSUNG A01 CORE", "SAMSUNG A02", "SAMSUNG A03",
+    "SAMSUNG A03S", "SAMSUNG A04E", "SAMSUNG A04S", "SAMSUNG A05", "SAMSUNG A07", "SAMSUNG A10S", "SAMSUNG A11",
+    "SAMSUNG A12", "SAMSUNG A13", "SAMSUNG A16", "SAMSUNG A22 5G", "SAMSUNG A23", "SAMSUNG A24", "SAMSUNG A33",
+    "SAMSUNG A35", "SAMSUNG A36", "SAMSUNG A36 SAMSUNG A56", "SAMSUNG A51", "SAMSUNG A53", "SAMSUNG A55", "SAMSUNG A57",
+    "SAMSUNG A73", "SAMSUNG F23", "SAMSUNG F56", "SAMSUNG J5 PRIME", "SAMSUNG J6", "SAMSUNG J7", "SAMSUNG J7 PRIME",
+    "SAMSUNG M13", "SAMSUNG M16", "SAMSUNG M31", "SAMSUNG M31S", "SAMSUNG M33", "SAMSUNG M35", "SAMSUNG M36", "SAMSUNG M56",
+    "TECHNO 2023", "TECHNO 2024", "TECHNO GO 2020", "TECHNO GO 2022", "TECHNO GO 2023", "TECHNO GO2", "TECHNO SPARK 7",
+    "VIVO IQOO Z 10 LITE", "VIVO T1 4G", "VIVO T1 5G", "VIVO T3 5G", "VIVO T3 LITE", "VIVO T3X", "VIVO T4", "VIVO T4R",
+    "VIVO V11 PRO", "VIVO V19", "VIVO V20", "VIVO V21", "VIVO V21E 4G", "VIVO V23", "VIVO V23 PRO", "VIVO V29", "VIVO V29E",
+    "VIVO V30", "VIVO V40", "VIVO V40 PRO", "VIVO V40E", "VIVO V50", "VIVO Y02", "VIVO Y03", "VIVO Y100", "VIVO Y12",
+    "VIVO Y18E", "VIVO Y19 5G", "VIVO Y19S", "VIVO Y200", "VIVO Y200 E", "VIVO Y200 PRO", "VIVO Y21", "VIVO Y27", "VIVO Y28",
+    "VIVO Y28S", "VIVO Y3", "VIVO Y30/Y50", "VIVO Y300", "VIVO Y300 PLUS", "VIVO Y300 PRO", "VIVO Y30E", "VIVO Y35",
+    "VIVO Y38", "VIVO Y39", "VIVO Y40E", "VIVO Y81", "VIVO Y93"
+  ];
+  
+  // ==================== 📌 DOYERS MODELS ====================
+  const modelListDoyers = [
+    "1+ 10R", "1+ 12", "1+ 12R", "1+ 13", "1+ 13R", "1+ 13T", "1+ 15", "1+ 2T", "1+ 9R", "1+ CE 2 LITE",
+    "1+ CE 3 LITE", "1+ NORD", "1+ NORD 2", "1+ NORD 2T", "1+ NORD 4", "1+ NORD 5", "1+ NORD CE", "1+ NORD CE 3",
+    "1+ NORD CE 5", "1+ NORD CE2", "1+ NORD CE4", "IP 12", "IP 12 PRO", "IP 13", "IP 13 14", "IP 13 PRO",
+    "IP 13 PRO MAX", "IP 13/ 14", "IP 14 PLUS", "IP 14 PLUS / 15 PLUS", "IP 14 PRO", "IP 14 PRO MAX", "IP 15",
+    "IP 15 PRO", "IP 15 PRO MAX", "IP 16", "IP 16 PLUS", "IP 16 PRO", "IP 16 PRO MAX", "IP 16E", "IP 17",
+    "IP 17 AIR", "IP 17 PRO", "IP 17 PRO MAX", "IP 7 8", "IP X /XS", "IP XR", "IP XS MAX", "MI 10 PRIME",
+    "MI 10C", "MI 12", "MI 12 4G", "MI 13 5G", "MI 13C", "MI 14 PRO PLUS", "MI 14C", "MI 15", "MI 15C",
+    "MI 8A", "MI 9A", "MI 9C", "MI A1", "MI A1 PLUS", "MI A3", "MI A5", "MI NOTE 10", "MI NOTE 10 PRO",
+    "MI NOTE 10T", "MI NOTE 11 4G", "MI NOTE 11T", "MI NOTE 13", "MI NOTE 13 PRO", "MI NOTE 13 PRO PLUS",
+    "MI NOTE 14", "MI NOTE 14 PRO", "MI NOTE 15 PRO", "MI NOTE 40 PRO", "MI NOTE 5 PRO", "MI NOTE 7 PRO",
+    "MI NOTE 8", "MI NOTE 8 PRO", "MI NOTE 9", "MI NOTE 9 PRO", "MOTO 50 FUSION", "MOTO 60 FUSION",
+    "MOTO EDGE 40", "MOTO EDGE 40 NEO", "MOTO EDGE 50", "MOTO EDGE 50 PRO", "MOTO EDGE 60", "MOTO EDGE 60 EDGE 60 PRO",
+    "MOTO G02", "MOTO G34", "MOTO G45", "MOTO G54", "MOTO G55", "MOTO G75", "MOTO G85", "MOTO G86", "MOTO G96",
+    "NOTHING CMF 2 PRO", "OPPO A15", "OPPO A16", "OPPO A16K", "OPPO A17", "OPPO A18", "OPPO A3 PRO", "OPPO A31",
+    "OPPO A3S", "OPPO A3X", "OPPO A5 2020", "OPPO A5 PRO", "OPPO A53", "OPPO A54", "OPPO A55", "OPPO A57",
+    "OPPO A59", "OPPO A5X", "OPPO A78", "OPPO A79", "OPPO A96", "OPPO F17 PRO", "OPPO F19", "OPPO F19 PRO PLUS",
+    "OPPO F21 PRO", "OPPO F21 PRO 4G", "OPPO F25 PRO", "OPPO F27", "OPPO F27 PRO", "OPPO F29", "OPPO F29 PRO",
+    "OPPO F31", "OPPO F31 PRO", "OPPO F31 PRO 5G", "OPPO F31 PRO PLUS", "OPPO F9 PRO", "OPPO K12X", "OPPO K13",
+    "OPPO K13X", "OPPO P3 PRO", "OPPO PO A16", "OPPO RENO 11", "OPPO RENO 11 PRO", "OPPO RENO 12", "OPPO RENO 12 PRO",
+    "OPPO RENO 13", "OPPO RENO 13 PRO", "OPPO RENO 14", "OPPO RENO 14 PRO", "OPPO RENO 6", "REALME 11 PRO",
+    "REALME 12 5G", "REALME 12 PLUS", "REALME 12 PRO", "REALME 13 PLUS", "REALME 13 PRO", "REALME 14",
+    "REALME 14 PRO", "REALME 14X", "REALME 15", "REALME 15 5G", "REALME 15T", "REALME 5", "REALME 6", "REALME 7",
+    "REALME 7I", "REALME 8 4G", "REALME 8 5G", "REALME 8I", "REALME 9I 5G", "REALME C12", "REALME C2", "REALME C20",
+    "REALME C21Y", "REALME C53", "REALME C55", "REALME C63", "REALME C67", "REALME C75", "REALME NARZO 50A",
+    "REALME P3", "REALME P4", "REALME REALME 5", "SAMSUNG A04E", "SAMSUNG A05S", "SAMSUNG A06", "SAMSUNG A07",
+    "SAMSUNG A12", "SAMSUNG A13", "SAMSUNG A14", "SAMSUNG A15", "SAMSUNG A16", "SAMSUNG A20", "SAMSUNG A21S",
+    "SAMSUNG A26", "SAMSUNG A34", "SAMSUNG A35", "SAMSUNG A50", "SAMSUNG A55", "SAMSUNG A56", "SAMSUNG F06",
+    "SAMSUNG M05", "SAMSUNG M13", "SAMSUNG M16", "SAMSUNG M21", "SAMSUNG M31", "SAMSUNG M35", "SAMSUNG M36",
+    "SAMSUNG M56", "SAMSUNG S20 FE", "SAMSUNG S22 ULTRA", "SAMSUNG S23", "SAMSUNG S23 FE", "SAMSUNG S23 ULTRA",
+    "SAMSUNG S24", "SAMSUNG S24 FE", "SAMSUNG S24 PLUS", "SAMSUNG S24 S25", "SAMSUNG S24 ULTRA", "SAMSUNG S25 FE",
+    "SAMSUNG S25 ULTRA", "TECHNO GO 2020", "TECHNO GO 2022", "TECHNO GO 2023", "TECHNO GO 2024", "TECHNO GO 2025",
+    "VIVO IQ 13", "VIVO IQ Z9X", "VIVO S1", "VIVO T1 44W", "VIVO T2 PRO", "VIVO T3 PRO", "VIVO T3X", "VIVO T4 ULTRA",
+    "VIVO T4X", "VIVO V20", "VIVO V27 PRO", "VIVO V29 PRO", "VIVO V40", "VIVO V40E", "VIVO V50", "VIVO V60",
+    "VIVO X200", "VIVO X200 FE", "VIVO X200 PRO", "VIVO X300", "VIVO Y02", "VIVO Y04", "VIVO Y100", "VIVO Y15S",
+    "VIVO Y16", "VIVO Y17S", "VIVO Y19", "VIVO Y20", "VIVO Y200", "VIVO Y200E", "VIVO Y21", "VIVO Y27", "VIVO Y29",
+    "VIVO Y30", "VIVO Y300", "VIVO Y300 PRO", "VIVO Y31", "VIVO Y31 5G", "VIVO Y35", "VIVO Y39", "VIVO Y400",
+    "VIVO Y400 PRO", "VIVO Y75", "VIVO Y90", "VIVO Y91I", "VIVO Y95"
+  ];
+  
+  // Other categories - Add your models here
+  const modelListSmoke = [];    // Add Smoke models here
+  const modelListPrint = [];    // Add Print models here
+  
+  // ==================== DO NOT EDIT BELOW THIS LINE ====================
+  
+  // Category configuration
+  const categories = {
+    "tpu": { 
+      prefix: "2MM", 
+      name: "2MM TOTO/TPU Collection", 
+      desc: "Ultra slim • 2mm thickness • TPU material • Flexible & durable • Perfect fit", 
+      icon: "fa-mobile-alt", 
+      models: modelListTpu 
+    },
+    "silicon": { 
+      prefix: "SILICON", 
+      name: "SILICON Collection", 
+      desc: "Soft silicon material • Perfect grip • Shock absorption • Premium quality", 
+      icon: "fa-gripfire", 
+      models: modelListSilicon 
+    },
+    "doyers": { 
+      prefix: "DOYERS", 
+      name: "DOYERS Collection", 
+      desc: "Premium Doyers material • Luxury finish • Superior protection • Elegant design", 
+      icon: "fa-gem", 
+      models: modelListDoyers 
+    },
+    "smoke": { 
+      prefix: "SMOKE", 
+      name: "SMOKE Collection", 
+      desc: "Smoke finish • Anti-fingerprint • Sleek look • Modern style", 
+      icon: "fa-smog", 
+      models: modelListSmoke 
+    },
+    "print": { 
+      prefix: "PRINT", 
+      name: "PRINT Collection", 
+      desc: "Vibrant prints • Unique designs • Fashionable • Eye-catching patterns", 
+      icon: "fa-print", 
+      models: modelListPrint 
+    }
+  };
 
-  // Create products array
-  const products = productNames.map((name, index) => ({
-    id: index + 1,
-    name: name,
-    brand: getBrandFromName(name)
-  }));
+  // Generate products for a category
+  function generateProductsForCategory(categoryKey) {
+    const cat = categories[categoryKey];
+    return cat.models.map((model, index) => ({
+      id: `${categoryKey}_${index}`,
+      name: `${cat.prefix} ${model}`,
+      category: categoryKey,
+      displayCategory: cat.name,
+      brand: getBrandFromName(model)
+    }));
+  }
 
+  // Get brand from model name
   function getBrandFromName(name) {
-    if (name.includes("1+")) return "1+";
-    if (name.includes("SAMSUNG")) return "SAMSUNG";
-    if (name.includes("MI")) return "MI";
-    if (name.includes("OPPO")) return "OPPO";
-    if (name.includes("VIVO")) return "VIVO";
-    if (name.includes("REALME")) return "REALME";
-    if (name.includes("IP")) return "IP";
-    if (name.includes("INFINIX")) return "INFINIX";
-    if (name.includes("MOTO")) return "MOTO";
-    if (name.includes("NOTHING")) return "NOTHING";
-    if (name.includes("PIXIL")) return "PIXIL";
+    const upperName = name.toUpperCase();
+    if (upperName.includes("1+") || upperName.includes("ONEPLUS")) return "1+";
+    if (upperName.includes("SAMSUNG")) return "SAMSUNG";
+    if (upperName.includes("MI") || upperName.includes("XIAOMI")) return "MI";
+    if (upperName.includes("OPPO")) return "OPPO";
+    if (upperName.includes("VIVO")) return "VIVO";
+    if (upperName.includes("REALME")) return "REALME";
+    if (upperName.includes("IPHONE") || upperName.includes("IP")) return "IP";
+    if (upperName.includes("MOTO") || upperName.includes("MOTOROLA")) return "MOTO";
+    if (upperName.includes("NOTHING")) return "NOTHING";
+    if (upperName.includes("INFINIX")) return "INFINIX";
+    if (upperName.includes("PIXIL")) return "PIXIL";
     return "Other";
   }
 
+  // Load all products
+  let allProducts = {
+    "tpu": [],
+    "silicon": [],
+    "doyers": [],
+    "smoke": [],
+    "print": []
+  };
+
+  function loadAllProducts() {
+    allProducts = {
+      "tpu": generateProductsForCategory("tpu"),
+      "silicon": generateProductsForCategory("silicon"),
+      "doyers": generateProductsForCategory("doyers"),
+      "smoke": generateProductsForCategory("smoke"),
+      "print": generateProductsForCategory("print")
+    };
+  }
+
+  // Get unique brands for current category
+  function getBrandsForCategory(categoryKey) {
+    const products = allProducts[categoryKey];
+    const brands = new Set();
+    products.forEach(p => brands.add(p.brand));
+    return Array.from(brands).sort();
+  }
+
+  // State
+  let currentCategory = "tpu";
   let currentBrandFilter = "all";
   let currentSearch = "";
   let cart = {};
@@ -670,49 +758,37 @@
     const ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
     hours = hours ? hours : 12;
-    const timeStr = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
-    return `${day}/${month}/${year} | ${timeStr}`;
+    return `${day}/${month}/${year} | ${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
   }
   
   function getFullDateTimeForOrder() {
     const now = new Date();
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    };
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
     return now.toLocaleString('en-US', options);
   }
   
   function updateLiveClock() {
-    const dateTimeSpan = document.getElementById('currentDateTime');
-    if (dateTimeSpan) {
-      dateTimeSpan.innerText = getCurrentDateTimeFormatted();
-    }
+    const span = document.getElementById('currentDateTime');
+    if (span) span.innerText = getCurrentDateTimeFormatted();
   }
   setInterval(updateLiveClock, 1000);
   updateLiveClock();
 
+  // Cart Functions
   function loadCart() {
-    const saved = localStorage.getItem("cityTemperedCart2");
+    const saved = localStorage.getItem("cityTemperedCartMulti");
     if (saved) cart = JSON.parse(saved);
     updateAllUI();
   }
 
   function saveCart() {
-    localStorage.setItem("cityTemperedCart2", JSON.stringify(cart));
+    localStorage.setItem("cityTemperedCartMulti", JSON.stringify(cart));
     updateAllUI();
   }
 
   function updateAllUI() {
     updateTopBar();
     updateCartModal();
-    updateBadge();
     renderProducts();
   }
 
@@ -721,16 +797,11 @@
     const itemCount = Object.keys(cart).length;
     document.getElementById("topCartItemCount").innerText = itemCount;
     document.getElementById("topCartTotalQty").innerText = total;
-  }
-
-  function updateBadge() {
-    const total = Object.values(cart).reduce((a, b) => a + b, 0);
     document.getElementById("modalCartTotalQty").innerText = total;
   }
 
   function updateCartModal() {
     const container = document.getElementById("cartItemsListModal");
-    if (!container) return;
     const items = Object.entries(cart);
     if (items.length === 0) {
       container.innerHTML = '<div style="text-align:center; padding:12px; color:#888;">No items selected</div>';
@@ -738,13 +809,16 @@
     }
     let html = '';
     for (const [id, qty] of items) {
-      const product = products.find(p => p.id == id);
+      let product = null;
+      for (const cat of Object.keys(allProducts)) {
+        product = allProducts[cat].find(p => p.id === id);
+        if (product) break;
+      }
       if (product) {
-        let shortName = product.name.length > 30 ? product.name.substring(0, 27) + '...' : product.name;
         html += `<div class="cart-item-modal">
-          <span class="cart-item-name-modal">${shortName}</span>
+          <span class="cart-item-name-modal">${product.name.length > 28 ? product.name.substring(0, 25) + '...' : product.name}</span>
           <span class="cart-item-qty-modal">x${qty}</span>
-          <span class="cart-item-remove-modal" onclick="removeFromCart(${id})"><i class="fas fa-trash-alt"></i></span>
+          <span class="cart-item-remove-modal" onclick="removeFromCart('${id}')"><i class="fas fa-trash-alt"></i></span>
         </div>`;
       }
     }
@@ -792,26 +866,25 @@
     setTimeout(() => toast.remove(), 1500);
   }
 
-  // WhatsApp Order with Quantity mentioned next to each model
+  // WhatsApp Order
   function sendWhatsAppOrder() {
     const items = Object.entries(cart);
     if (items.length === 0) {
       showToast("Please select items first!");
       return;
     }
-    
     const orderTimestamp = getFullDateTimeForOrder();
-    
     let message = `🏪 *CITY TEMPERED AND COVER HOUSE* 🏪\n`;
-    message += `📱 *2MM ULTRA SLIM COLLECTION*\n`;
     message += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
     message += `*📋 ORDER DETAILS:*\n\n`;
-    
     let totalItems = 0;
     for (const [id, qty] of items) {
-      const product = products.find(p => p.id == id);
+      let product = null;
+      for (const cat of Object.keys(allProducts)) {
+        product = allProducts[cat].find(p => p.id === id);
+        if (product) break;
+      }
       if (product) {
-        // Format: Model Name - Quantity: X
         message += `▸ ${product.name} - Quantity: ${qty}\n`;
         totalItems += qty;
       }
@@ -823,21 +896,13 @@
     message += `📍 *Store:* CITY TEMPERED AND COVER HOUSE\n`;
     message += `📞 *Contact:* +919621755459\n`;
     message += `✨ *Thank You For Shopping!* ✨`;
-    
     window.open(`https://wa.me/919621755459?text=${encodeURIComponent(message)}`, '_blank');
-    showToast("✅ Order sent with Date & Time!");
+    showToast("✅ Order sent!");
   }
 
-  function toggleCartModal(forceClose) {
-    const modal = document.getElementById("cartModal");
-    if (forceClose === false) {
-      modal.classList.remove("open");
-    } else {
-      modal.classList.toggle("open");
-    }
-  }
-
+  // Render Products
   function renderProducts() {
+    const products = allProducts[currentCategory];
     let filtered = products.filter(p => {
       const matchesBrand = currentBrandFilter === "all" || p.brand === currentBrandFilter;
       const matchesSearch = currentSearch === "" || p.name.toLowerCase().includes(currentSearch.toLowerCase());
@@ -848,49 +913,106 @@
     document.getElementById("modelCount").innerText = products.length;
     
     const grid = document.getElementById("productGrid");
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div style="text-align:center; padding:40px; color:#888;">No models found. Please add models to this category.</div>';
+      return;
+    }
+    
     grid.innerHTML = filtered.map(product => {
       const currentQty = cart[product.id] || 0;
+      const safeId = product.id.replace(/[^a-zA-Z0-9]/g, '_');
       return `
         <div class="product-card">
           <div class="product-info">
             <div class="product-name">${product.name}</div>
-            <div class="product-category">2MM Ultra Slim</div>
+            <div class="product-category">${product.displayCategory}</div>
           </div>
           <div class="quantity-section">
             <div class="qty-controls">
-              <button class="qty-btn" onclick="decrementQty(${product.id})">-</button>
-              <span class="qty-value" id="qty-${product.id}">${currentQty}</span>
-              <button class="qty-btn" onclick="incrementQty(${product.id})">+</button>
+              <button class="qty-btn" onclick="decrementQty('${product.id}')">-</button>
+              <span class="qty-value" id="qty-${safeId}">${currentQty}</span>
+              <button class="qty-btn" onclick="incrementQty('${product.id}')">+</button>
             </div>
-            <button class="preset-ten" onclick="addTenQty(${product.id})">+10</button>
+            <button class="preset-ten" onclick="addTenQty('${product.id}')">+10</button>
           </div>
         </div>
       `;
     }).join('');
+    
+    // Update quantity displays
+    for (const [id, qty] of Object.entries(cart)) {
+      const safeId = id.replace(/[^a-zA-Z0-9]/g, '_');
+      const elem = document.getElementById(`qty-${safeId}`);
+      if (elem) elem.innerText = qty;
+    }
   }
 
+  // Update Brand Filters
+  function updateBrandFilters() {
+    const brands = getBrandsForCategory(currentCategory);
+    const filterDiv = document.getElementById("brandFilter");
+    let html = `<button class="brand-btn active" data-brand="all">All Brands</button>`;
+    brands.forEach(brand => {
+      html += `<button class="brand-btn" data-brand="${brand}">${brand}</button>`;
+    });
+    filterDiv.innerHTML = html;
+    
+    document.querySelectorAll(".brand-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".brand-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentBrandFilter = btn.dataset.brand;
+        renderProducts();
+      });
+    });
+  }
+
+  // Change Category
+  function changeCategory(categoryKey) {
+    currentCategory = categoryKey;
+    currentBrandFilter = "all";
+    currentSearch = "";
+    document.getElementById("searchInput").value = "";
+    
+    document.querySelectorAll(".category-tab").forEach(tab => {
+      if (tab.dataset.category === categoryKey) {
+        tab.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+      }
+    });
+    
+    const cat = categories[categoryKey];
+    document.getElementById("bannerTitle").innerHTML = `<i class="fas ${cat.icon}"></i> ${cat.name}`;
+    document.getElementById("bannerDesc").innerText = cat.desc;
+    
+    updateBrandFilters();
+    renderProducts();
+  }
+
+  // Cart Modal Toggle
+  function toggleCartModal(forceClose) {
+    const modal = document.getElementById("cartModal");
+    if (forceClose === false) modal.classList.remove("open");
+    else modal.classList.toggle("open");
+  }
+
+  // Event Listeners
   document.getElementById("searchInput").addEventListener("input", (e) => {
     currentSearch = e.target.value;
     renderProducts();
   });
   
-  document.querySelectorAll(".brand-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".brand-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentBrandFilter = btn.dataset.brand;
-      renderProducts();
-    });
+  document.querySelectorAll(".category-tab").forEach(tab => {
+    tab.addEventListener("click", () => changeCategory(tab.dataset.category));
   });
-
-  // Close modal when clicking outside
+  
   window.onclick = function(event) {
     const modal = document.getElementById("cartModal");
-    if (event.target === modal) {
-      modal.classList.remove("open");
-    }
+    if (event.target === modal) modal.classList.remove("open");
   }
 
+  // Expose functions globally
   window.decrementQty = decrementQty;
   window.incrementQty = incrementQty;
   window.addTenQty = addTenQty;
@@ -899,7 +1021,10 @@
   window.removeFromCart = removeFromCart;
   window.toggleCartModal = toggleCartModal;
 
+  // Initialize
+  loadAllProducts();
   loadCart();
+  updateBrandFilters();
   renderProducts();
 </script>
 </body>
