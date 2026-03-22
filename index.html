@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>CITY TEMPERED AND COVER HOUSE - 2MM Phone Covers with Auto Timestamp</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fb;
+      color: #1a2a3a;
+    }
+
+    /* Header - Compact */
+    .top-heading {
+      background: linear-gradient(135deg, #c0392b, #e67e22);
+      color: white;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .top-heading i {
+      margin: 0 5px;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #0f2b35 0%, #1a3a44 100%);
+      color: white;
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .logo h1 {
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .live-time {
+      background: #ffd966;
+      color: #1e3c4c;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .live-time i {
+      font-size: 0.7rem;
+    }
+
+    /* Top Cart Bar - Moved to Top */
+    .top-cart-bar {
+      background: linear-gradient(135deg, #1e3c4c, #2c5a6e);
+      padding: 8px 12px;
+      margin: 8px 0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .cart-summary {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .cart-summary-item {
+      background: rgba(255,255,255,0.2);
+      padding: 5px 12px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: white;
+    }
+    .cart-summary-item i {
+      font-size: 0.7rem;
+    }
+    .cart-buttons {
+      display: flex;
+      gap: 8px;
+    }
+    .top-cart-btn {
+      background: #25D366;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.2s;
+    }
+    .top-cart-btn.clear {
+      background: #e74c3c;
+    }
+    .top-cart-btn:hover {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+    .view-cart-link {
+      background: #ffd966;
+      color: #1e3c4c;
+      padding: 5px 12px;
+      border-radius: 25px;
+      font-size: 0.65rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.2s;
+    }
+    .view-cart-link:hover {
+      background: #e67e22;
+      color: white;
+    }
+
+    /* Category Banner - 2MM Only */
+    .category-banner {
+      background: linear-gradient(135deg, #2c5a6e, #1e3e4c);
+      border-radius: 12px;
+      padding: 12px 15px;
+      margin: 10px 0;
+      color: white;
+      text-align: center;
+    }
+    .category-banner h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .category-banner h2 i {
+      margin-right: 8px;
+      color: #ffd966;
+    }
+    .category-banner p {
+      font-size: 0.7rem;
+      opacity: 0.9;
+    }
+    .badge-info {
+      background: #ffd966;
+      color: #1e3c4c;
+      padding: 3px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.65rem;
+      font-weight: bold;
+    }
+
+    /* Search - Compact */
+    .search-bar {
+      margin: 8px 0;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      font-size: 0.75rem;
+      outline: none;
+    }
+    .brand-filter {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .brand-btn {
+      padding: 4px 10px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 0.6rem;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .brand-btn.active {
+      background: #2c5a6e;
+      color: white;
+      border-color: #2c5a6e;
+    }
+    .brand-btn:hover {
+      background: #ffd966;
+      border-color: #ffd966;
+    }
+
+    /* Product Grid - Compact List View */
+    .product-count {
+      margin: 8px 0;
+      font-size: 0.7rem;
+      color: #5a6e7a;
+    }
+    .product-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 10px 0;
+      max-height: calc(100vh - 380px);
+      overflow-y: auto;
+      padding-bottom: 10px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #eef2f6;
+    }
+    .product-info {
+      flex: 2;
+      min-width: 150px;
+    }
+    .product-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e3c4c;
+      word-break: break-word;
+    }
+    .product-category {
+      font-size: 0.55rem;
+      color: #e67e22;
+      margin-top: 2px;
+    }
+    
+    /* Quantity Selector - Inline with Model */
+    .quantity-section {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: #f8fafd;
+      padding: 5px 10px;
+      border-radius: 25px;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: white;
+      border-radius: 30px;
+      border: 1px solid #dce5ec;
+      padding: 2px 5px;
+    }
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border: none;
+      background: #f0f3f8;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #1e3c4c;
+    }
+    .qty-btn:hover {
+      background: #ffd966;
+    }
+    .qty-value {
+      font-size: 0.8rem;
+      font-weight: bold;
+      min-width: 28px;
+      text-align: center;
+    }
+    .preset-ten {
+      background: #ffd966;
+      border: none;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      color: #1e3c4c;
+    }
+    .preset-ten:hover {
+      background: #e67e22;
+      color: white;
+      transform: scale(1.02);
+    }
+
+    /* Cart Modal */
+    .cart-modal {
+      position: fixed;
+      top: 70px;
+      right: 10px;
+      background: white;
+      border-radius: 12px;
+      width: 320px;
+      max-width: calc(100% - 20px);
+      box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+      z-index: 1001;
+      overflow: hidden;
+      border-top: 3px solid #25D366;
+      display: none;
+    }
+    .cart-modal.open {
+      display: block;
+      animation: slideDown 0.2s ease;
+    }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .cart-modal-header {
+      background: #1e3c4c;
+      color: white;
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-modal-header h4 {
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .close-cart {
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0 5px;
+    }
+    .cart-modal-body {
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    .cart-items-list-modal {
+      max-height: 280px;
+      overflow-y: auto;
+    }
+    .cart-item-modal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.7rem;
+    }
+    .cart-item-name-modal {
+      flex: 1;
+      font-weight: 500;
+    }
+    .cart-item-qty-modal {
+      margin: 0 8px;
+      color: #2c6e9e;
+      font-weight: bold;
+    }
+    .cart-item-remove-modal {
+      color: #e74c3c;
+      cursor: pointer;
+      padding: 0 5px;
+    }
+    .cart-total-modal {
+      padding: 8px 0;
+      font-weight: bold;
+      border-top: 1px solid #ffd966;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+    .whatsapp-btn-modal {
+      width: 100%;
+      padding: 8px;
+      background: #25D366;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 0.7rem;
+    }
+    .clear-cart-modal {
+      background: #e74c3c;
+      margin-top: 5px;
+    }
+    .toast {
+      position: fixed;
+      bottom: 70px;
+      left: 10px;
+      background: #1e3c4c;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 25px;
+      z-index: 1100;
+      animation: fadeOut 2s ease;
+      font-size: 0.65rem;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 0; transform: translateY(20px); }
+      15% { opacity: 1; transform: translateY(0); }
+      85% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-20px); }
+    }
+    footer {
+      background: #0f2b35;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      margin-top: 10px;
+      font-size: 0.6rem;
+    }
+    
+    /* Scrollbar */
+    .product-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+    .product-grid::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .product-grid::-webkit-scrollbar-thumb {
+      background: #ffd966;
+      border-radius: 10px;
+    }
+    
+    @media (max-width: 600px) {
+      .product-card {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .quantity-section {
+        justify-content: space-between;
+      }
+      .live-time {
+        font-size: 0.55rem;
+        padding: 3px 8px;
+      }
+      .top-cart-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .cart-summary {
+        justify-content: space-between;
+      }
+      .cart-buttons {
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-heading">
+  <i class="fas fa-store"></i> CITY TEMPERED AND COVER HOUSE <i class="fas fa-mobile-alt"></i>
+</div>
+
+<div class="header">
+  <div class="container">
+    <div class="logo">
+      <h1><i class="fas fa-shield-alt"></i> 2MM Phone Cover Store</h1>
+      <div class="live-time" id="liveDateTime">
+        <i class="fas fa-calendar-alt"></i>
+        <span id="currentDateTime">--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Top Cart Bar -->
+  <div class="top-cart-bar" id="topCartBar">
+    <div class="cart-summary">
+      <div class="cart-summary-item">
+        <i class="fas fa-shopping-bag"></i>
+        <span id="topCartItemCount">0</span> Items
+      </div>
+      <div class="cart-summary-item">
+        <i class="fas fa-boxes"></i>
+        <span id="topCartTotalQty">0</span> Total
+      </div>
+    </div>
+    <div class="cart-buttons">
+      <button class="view-cart-link" onclick="toggleCartModal()">
+        <i class="fas fa-eye"></i> View Cart
+      </button>
+      <button class="top-cart-btn" onclick="sendWhatsAppOrder()">
+        <i class="fab fa-whatsapp"></i> Order
+      </button>
+      <button class="top-cart-btn clear" onclick="clearCart()">
+        <i class="fas fa-trash"></i> Clear
+      </button>
+    </div>
+  </div>
+
+  <!-- Category Banner -->
+  <div class="category-banner">
+    <h2><i class="fas fa-layer-group"></i> 2MM Ultra Slim Collection</h2>
+    <p>Premium quality phone covers • 2mm thickness • Perfect fit • Shockproof protection</p>
+    <div class="badge-info"><i class="fas fa-tag"></i> <span id="modelCount">200+</span> Models Available | Free Shipping</div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search your phone model...">
+    <div class="brand-filter" id="brandFilter">
+      <button class="brand-btn active" data-brand="all">All Brands</button>
+      <button class="brand-btn" data-brand="1+">OnePlus</button>
+      <button class="brand-btn" data-brand="SAMSUNG">Samsung</button>
+      <button class="brand-btn" data-brand="MI">Xiaomi/Mi</button>
+      <button class="brand-btn" data-brand="OPPO">Oppo</button>
+      <button class="brand-btn" data-brand="VIVO">Vivo</button>
+      <button class="brand-btn" data-brand="REALME">Realme</button>
+      <button class="brand-btn" data-brand="IP">iPhone</button>
+    </div>
+  </div>
+
+  <div class="product-count" id="productCount"></div>
+  <div id="productGrid" class="product-grid"></div>
+</div>
+
+<!-- Cart Modal -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-modal-header">
+    <h4><i class="fas fa-shopping-bag"></i> Your Cart</h4>
+    <span class="close-cart" onclick="toggleCartModal()">&times;</span>
+  </div>
+  <div class="cart-modal-body">
+    <div id="cartItemsListModal" class="cart-items-list-modal"></div>
+    <div class="cart-total-modal">
+      <span>Total Items:</span>
+      <span id="modalCartTotalQty">0</span>
+    </div>
+    <button class="whatsapp-btn-modal" onclick="sendWhatsAppOrder()">
+      <i class="fab fa-whatsapp"></i> Place Order on WhatsApp
+    </button>
+    <button class="whatsapp-btn-modal clear-cart-modal" onclick="clearCart()">
+      <i class="fas fa-trash"></i> Clear All
+    </button>
+  </div>
+</div>
+
+<footer>
+  <p><i class="fab fa-whatsapp"></i> Order on WhatsApp: +919621755459 | CITY TEMPERED AND COVER HOUSE</p>
+  <p style="margin-top: 4px; font-size: 0.6rem;">2MM Ultra Slim Collection | All Phone Models Available</p>
+</footer>
+
+<script>
+  // All 2MM product models - Complete List
+  const productNames = [
+    "2MM 1+ CE 2 LITE", "2MM 1+ CE 3 LITE", "2MM 1+ CE 4 LITE", "2MM 1+ CE 5", "2MM 1+ CE3", "2MM 1+ CE3 LITE", "2MM 1+ CE5",
+    "2MM 1+ NORD 2 T", "2MM 1+ NORD 3", "2MM 1+ NORD 5", "2MM 1+ NORD CE 5", "2MM 1+ NORD CE4", "2MM 1+ NORD CE5", "2MM 1+ NORD2",
+    "2MM 1+10R", "2MM 1+11R", "2MM 1+12 R", "2MM 1+13", "2MM 1+13T", "2MM 1+8T", "2MM 1+NORD", "2MM 1+NORD CE 3 LITE", "2MM 1+NORD CE4 LITE",
+    "2MM INFINIX GO 2023", "2MM INFINIX GO 2024", "2MM INFINIX GO 2025", "2MM INFINIX HOT 50I", "2MM INFINIX SMART 8",
+    "2MM IP 12 PRO MAX", "2MM IP 13 MINI", "2MM IP 13 PRO MAX", "2MM IP 14 PLUS", "2MM IP 14 PRO MAX", "2MM IP 16 PLUS", "2MM IP 16 PRO MAX",
+    "2MM IP 16PRO", "2MM IP 17", "2MM IP 17 AIR", "2MM IP 17 PRO", "2MM IP 6", "2MM IP 6 PLUS", "2MM IP 7", "2MM IP 7G", "2MM IP X",
+    "2MM MI 12C", "2MM MI 13C", "2MM MI 14C", "2MM MI 9A", "2MM MI 9C", "2MM MI A5", "2MM MI MI 12", "2MM MI MI 12 4G", "2MM MI MI 12C",
+    "2MM MI MI 13", "2MM MI MI 13 4G", "2MM MI MI 13 5G", "2MM MI MI 13C", "2MM MI MI 13C 5G", "2MM MI MI 14C", "2MM MI MI 15",
+    "2MM MI MI 6A", "2MM MI MI 7", "2MM MI MI 8", "2MM MI MI 9 POWER", "2MM MI MI 9A", "2MM MI MI A1", "2MM MI MI A1+", "2MM MI MI A3",
+    "2MM MI MI A4", "2MM MI MI A5", "2MM MI MI NOTE 11S", "2MM MI MI NOTE 8", "2MM MI NOTE 10 4G", "2MM MI NOTE 10 5G", "2MM MI NOTE 11",
+    "2MM MI NOTE 11 4G", "2MM MI NOTE 11 5G", "2MM MI NOTE 12 4G", "2MM MI NOTE 13 PRO", "2MM MI NOTE 14", "2MM MI NOTE 14 PRO",
+    "2MM MI NOTE 7", "2MM MI NOTE 8", "2MM MI NOTE 8 PRO", "2MM MI NOTE 9", "2MM MI NOTE 9 4G", "2MM MI NOTE 9 PRO",
+    "2MM MOTO 25 EDGE", "2MM MOTO EDGE 50 FUSION", "2MM MOTO EDGE 60 PRO", "2MM MOTO G05", "2MM MOTO G34", "2MM MOTO G35", "2MM MOTO G54", "2MM MOTO G85",
+    "2MM NOTHING PHONE 1", "2MM NOTHING PHONE 2", "2MM NOTHING PHONE 2A", "2MM NOTHING PHONE 3",
+    "2MM OPPO A15", "2MM OPPO A16", "2MM OPPO A16K", "2MM OPPO A17", "2MM OPPO A18", "2MM OPPO A3 PRO", "2MM OPPO A31", "2MM OPPO A3S", "2MM OPPO A3X",
+    "2MM OPPO A5 PRO", "2MM OPPO A52", "2MM OPPO A53", "2MM OPPO A54", "2MM OPPO A55", "2MM OPPO A57", "2MM OPPO A58", "2MM OPPO A5S", "2MM OPPO A5X",
+    "2MM OPPO A78", "2MM OPPO A79", "2MM OPPO A9", "2MM OPPO A9 2020", "2MM OPPO F11", "2MM OPPO F11 PRO", "2MM OPPO F15", "2MM OPPO F17", "2MM OPPO F17 PRO",
+    "2MM OPPO F19", "2MM OPPO F19 PRO", "2MM OPPO F19 PRO +", "2MM OPPO F21 PRO", "2MM OPPO F23", "2MM OPPO F23 5G", "2MM OPPO F27", "2MM OPPO F27 PRO",
+    "2MM OPPO F29", "2MM OPPO F31 PRO", "2MM OPPO F31 PRO +", "2MM OPPO F9", "2MM OPPO K13", "2MM OPPO RENO 12", "2MM OPPO RENO 12 5G", "2MM OPPO RENO 12F",
+    "2MM OPPO RENO 13", "2MM OPPO RENO 14", "2MM PIXIL 6A", "2MM PIXIL 7A", "2MM PIXIL 8", "2MM PIXIL 8 PRO", "2MM PIXIL 8A", "2MM PIXIL 9A",
+    "2MM REALME 11 5G", "2MM REALME 11 PRO", "2MM REALME 12", "2MM REALME 12 +", "2MM REALME 12 5G", "2MM REALME 12 PRO", "2MM REALME 12+",
+    "2MM REALME 13 5G", "2MM REALME 14", "2MM REALME 14X", "2MM REALME 15", "2MM REALME 15C", "2MM REALME 2", "2MM REALME 3", "2MM REALME 3 PRO",
+    "2MM REALME 5", "2MM REALME 5 PRO", "2MM REALME 7", "2MM REALME 7I", "2MM REALME 8", "2MM REALME 8 5G", "2MM REALME 8I", "2MM REALME 9 PRIME",
+    "2MM REALME 9I", "2MM REALME 9I 5G", "2MM REALME C11", "2MM REALME C12", "2MM REALME C15", "2MM REALME C2", "2MM REALME C20", "2MM REALME C21",
+    "2MM REALME C21Y", "2MM REALME C3", "2MM REALME C30", "2MM REALME C31", "2MM REALME C33", "2MM REALME C35", "2MM REALME C53", "2MM REALME C55",
+    "2MM REALME C61", "2MM REALME C63", "2MM REALME NARZO 20 PRO", "2MM REALME XT",
+    "2MM SAMSUNG A03", "2MM SAMSUNG A03S", "2MM SAMSUNG A04", "2MM SAMSUNG A04E", "2MM SAMSUNG A05", "2MM SAMSUNG A05S", "2MM SAMSUNG A10",
+    "2MM SAMSUNG A11", "2MM SAMSUNG A12", "2MM SAMSUNG A13", "2MM SAMSUNG A14", "2MM SAMSUNG A15", "2MM SAMSUNG A16", "2MM SAMSUNG A20",
+    "2MM SAMSUNG A21S", "2MM SAMSUNG A22", "2MM SAMSUNG A22 4G", "2MM SAMSUNG A23", "2MM SAMSUNG A26", "2MM SAMSUNG A32", "2MM SAMSUNG A33",
+    "2MM SAMSUNG A35", "2MM SAMSUNG A36", "2MM SAMSUNG A50", "2MM SAMSUNG A51", "2MM SAMSUNG A53", "2MM SAMSUNG A54", "2MM SAMSUNG A56",
+    "2MM SAMSUNG F17", "2MM SAMSUNG F23", "2MM SAMSUNG M11", "2MM SAMSUNG M14", "2MM SAMSUNG M30S", "2MM SAMSUNG M31", "2MM SAMSUNG M33",
+    "2MM SAMSUNG M36", "2MM SAMSUNG M54", "2MM SAMSUNG M55", "2MM SAMSUNG M56", "2MM SAMSUNG S20", "2MM SAMSUNG S20 ULTRA", "2MM SAMSUNG S21 FE",
+    "2MM SAMSUNG S21 ULTRA", "2MM SAMSUNG S22 ULTRA", "2MM SAMSUNG S23 FE", "2MM SAMSUNG S23 ULTRA", "2MM SAMSUNG S24 FE", "2MM SAMSUNG S25",
+    "2MM SAMSUNG S25 EDGE", "2MM SAMSUNG S25 ULTRA", "2MM TECHNO GO 2022", "2MM VIVO S1", "2MM VIVO T1 4G", "2MM VIVO T3X", "2MM VIVO T4 5G",
+    "2MM VIVO T4 ULTRA", "2MM VIVO T4X", "2MM VIVO V17", "2MM VIVO V21E", "2MM VIVO V23 5G", "2MM VIVO V23 PRO", "2MM VIVO V25 PRO", "2MM VIVO V27",
+    "2MM VIVO V29", "2MM VIVO V30", "2MM VIVO V30E", "2MM VIVO V40E", "2MM VIVO V50", "2MM VIVO X 200 FE", "2MM VIVO X200 FE", "2MM VIVO Y02",
+    "2MM VIVO Y04", "2MM VIVO Y100", "2MM VIVO Y16", "2MM VIVO Y17", "2MM VIVO Y18", "2MM VIVO Y19S", "2MM VIVO Y200", "2MM VIVO Y200 PRO",
+    "2MM VIVO Y21", "2MM VIVO Y27", "2MM VIVO Y28", "2MM VIVO Y29", "2MM VIVO Y300", "2MM VIVO Y35", "2MM VIVO Y400", "2MM VIVO Y400 PRO",
+    "2MM VIVO Y50", "2MM VIVO Y51", "2MM VIVO Y75", "2MM VIVO Y90", "2MM VIVO Y93", "2MM VIVO Y95", "2MM VIVO YO4"
+  ];
+
+  // Create products array
+  const products = productNames.map((name, index) => ({
+    id: index + 1,
+    name: name,
+    brand: getBrandFromName(name)
+  }));
+
+  function getBrandFromName(name) {
+    if (name.includes("1+")) return "1+";
+    if (name.includes("SAMSUNG")) return "SAMSUNG";
+    if (name.includes("MI")) return "MI";
+    if (name.includes("OPPO")) return "OPPO";
+    if (name.includes("VIVO")) return "VIVO";
+    if (name.includes("REALME")) return "REALME";
+    if (name.includes("IP")) return "IP";
+    if (name.includes("INFINIX")) return "INFINIX";
+    if (name.includes("MOTO")) return "MOTO";
+    if (name.includes("NOTHING")) return "NOTHING";
+    if (name.includes("PIXIL")) return "PIXIL";
+    return "Other";
+  }
+
+  let currentBrandFilter = "all";
+  let currentSearch = "";
+  let cart = {};
+
+  // Date & Time Functions
+  function getCurrentDateTimeFormatted() {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const timeStr = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
+    return `${day}/${month}/${year} | ${timeStr}`;
+  }
+  
+  function getFullDateTimeForOrder() {
+    const now = new Date();
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    };
+    return now.toLocaleString('en-US', options);
+  }
+  
+  function updateLiveClock() {
+    const dateTimeSpan = document.getElementById('currentDateTime');
+    if (dateTimeSpan) {
+      dateTimeSpan.innerText = getCurrentDateTimeFormatted();
+    }
+  }
+  setInterval(updateLiveClock, 1000);
+  updateLiveClock();
+
+  function loadCart() {
+    const saved = localStorage.getItem("cityTemperedCart2");
+    if (saved) cart = JSON.parse(saved);
+    updateAllUI();
+  }
+
+  function saveCart() {
+    localStorage.setItem("cityTemperedCart2", JSON.stringify(cart));
+    updateAllUI();
+  }
+
+  function updateAllUI() {
+    updateTopBar();
+    updateCartModal();
+    updateBadge();
+    renderProducts();
+  }
+
+  function updateTopBar() {
+    const total = Object.values(cart).reduce((a, b) => a + b, 0);
+    const itemCount = Object.keys(cart).length;
+    document.getElementById("topCartItemCount").innerText = itemCount;
+    document.getElementById("topCartTotalQty").innerText = total;
+  }
+
+  function updateBadge() {
+    const total = Object.values(cart).reduce((a, b) => a + b, 0);
+    document.getElementById("modalCartTotalQty").innerText = total;
+  }
+
+  function updateCartModal() {
+    const container = document.getElementById("cartItemsListModal");
+    if (!container) return;
+    const items = Object.entries(cart);
+    if (items.length === 0) {
+      container.innerHTML = '<div style="text-align:center; padding:12px; color:#888;">No items selected</div>';
+      return;
+    }
+    let html = '';
+    for (const [id, qty] of items) {
+      const product = products.find(p => p.id == id);
+      if (product) {
+        let shortName = product.name.length > 30 ? product.name.substring(0, 27) + '...' : product.name;
+        html += `<div class="cart-item-modal">
+          <span class="cart-item-name-modal">${shortName}</span>
+          <span class="cart-item-qty-modal">x${qty}</span>
+          <span class="cart-item-remove-modal" onclick="removeFromCart(${id})"><i class="fas fa-trash-alt"></i></span>
+        </div>`;
+      }
+    }
+    container.innerHTML = html;
+  }
+
+  function updateQuantity(productId, newQty) {
+    if (newQty <= 0) delete cart[productId];
+    else cart[productId] = newQty;
+    saveCart();
+  }
+
+  function incrementQty(productId) {
+    updateQuantity(productId, (cart[productId] || 0) + 1);
+  }
+  
+  function decrementQty(productId) {
+    const current = cart[productId] || 0;
+    if (current > 0) updateQuantity(productId, current - 1);
+  }
+  
+  function addTenQty(productId) {
+    updateQuantity(productId, (cart[productId] || 0) + 10);
+    showToast("+10 added");
+  }
+
+  function removeFromCart(productId) {
+    delete cart[productId];
+    saveCart();
+    showToast("Removed");
+  }
+
+  function clearCart() {
+    cart = {};
+    saveCart();
+    showToast("Cart cleared");
+    toggleCartModal(false);
+  }
+
+  function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 1500);
+  }
+
+  // WhatsApp Order with Quantity mentioned next to each model
+  function sendWhatsAppOrder() {
+    const items = Object.entries(cart);
+    if (items.length === 0) {
+      showToast("Please select items first!");
+      return;
+    }
+    
+    const orderTimestamp = getFullDateTimeForOrder();
+    
+    let message = `🏪 *CITY TEMPERED AND COVER HOUSE* 🏪\n`;
+    message += `📱 *2MM ULTRA SLIM COLLECTION*\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `*📋 ORDER DETAILS:*\n\n`;
+    
+    let totalItems = 0;
+    for (const [id, qty] of items) {
+      const product = products.find(p => p.id == id);
+      if (product) {
+        // Format: Model Name - Quantity: X
+        message += `▸ ${product.name} - Quantity: ${qty}\n`;
+        totalItems += qty;
+      }
+    }
+    message += `\n━━━━━━━━━━━━━━━━━━━━━━\n`;
+    message += `📦 *Total Items:* ${totalItems}\n`;
+    message += `━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+    message += `✅ *Order Placed On:* ${orderTimestamp}\n`;
+    message += `📍 *Store:* CITY TEMPERED AND COVER HOUSE\n`;
+    message += `📞 *Contact:* +919621755459\n`;
+    message += `✨ *Thank You For Shopping!* ✨`;
+    
+    window.open(`https://wa.me/919621755459?text=${encodeURIComponent(message)}`, '_blank');
+    showToast("✅ Order sent with Date & Time!");
+  }
+
+  function toggleCartModal(forceClose) {
+    const modal = document.getElementById("cartModal");
+    if (forceClose === false) {
+      modal.classList.remove("open");
+    } else {
+      modal.classList.toggle("open");
+    }
+  }
+
+  function renderProducts() {
+    let filtered = products.filter(p => {
+      const matchesBrand = currentBrandFilter === "all" || p.brand === currentBrandFilter;
+      const matchesSearch = currentSearch === "" || p.name.toLowerCase().includes(currentSearch.toLowerCase());
+      return matchesBrand && matchesSearch;
+    });
+    
+    document.getElementById("productCount").innerHTML = `📱 Showing ${filtered.length} of ${products.length} models`;
+    document.getElementById("modelCount").innerText = products.length;
+    
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = filtered.map(product => {
+      const currentQty = cart[product.id] || 0;
+      return `
+        <div class="product-card">
+          <div class="product-info">
+            <div class="product-name">${product.name}</div>
+            <div class="product-category">2MM Ultra Slim</div>
+          </div>
+          <div class="quantity-section">
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="decrementQty(${product.id})">-</button>
+              <span class="qty-value" id="qty-${product.id}">${currentQty}</span>
+              <button class="qty-btn" onclick="incrementQty(${product.id})">+</button>
+            </div>
+            <button class="preset-ten" onclick="addTenQty(${product.id})">+10</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  document.getElementById("searchInput").addEventListener("input", (e) => {
+    currentSearch = e.target.value;
+    renderProducts();
+  });
+  
+  document.querySelectorAll(".brand-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".brand-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentBrandFilter = btn.dataset.brand;
+      renderProducts();
+    });
+  });
+
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById("cartModal");
+    if (event.target === modal) {
+      modal.classList.remove("open");
+    }
+  }
+
+  window.decrementQty = decrementQty;
+  window.incrementQty = incrementQty;
+  window.addTenQty = addTenQty;
+  window.sendWhatsAppOrder = sendWhatsAppOrder;
+  window.clearCart = clearCart;
+  window.removeFromCart = removeFromCart;
+  window.toggleCartModal = toggleCartModal;
+
+  loadCart();
+  renderProducts();
+</script>
+</body>
+</html>
